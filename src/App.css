@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --mainBlue: #3993dd;
+  --mainWhite: #fffbfc;
+  --mainBlack: #323232;
+  --mainFontFamily: "Permanent Marker", cursive;
+  --mainTransition: all 0.4s ease;
+  --longTransition: all 2s ease;
+  --mainLetterSpacing: 8px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* navbar */
+.navbar {
+  padding: 10px 20px;
+  display: block;
+  background-color: var(--mainWhite);
+  width: 100%;
+}
+.portfolio {
+  color: var(--mainBlue);
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: var(--mainFontFamily);
+}
+.nav {
+  display: none;
+  z-index: 1;
+}
+.nav ul {
+  list-style-type: none;
+}
+.nav li {
+  line-height: 45px;
+  transition: var(--mainTransition);
+}
+.link {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  color: var(--mainBlack);
+}
+.nav li:hover {
+  transform: translateX(10px);
+}
+.bars {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: var(--mainBlue);
+  cursor: pointer;
+  transition: var(--mainTransition);
+}
+.bars:hover {
+  font-size: 2.2rem;
+}
+.show {
+  display: block;
+}
+@media screen and (min-width: 756px) {
+  .bars {
+    display: none;
+  }
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    text-align: center;
+  }
+  .navbar ul {
+  }
+  .nav {
+    display: block;
+  }
+  .nav li {
+    display: inline-block;
+    padding: 0 20px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* home page */
+.home {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: calc(100vh - 66.4px);
+  width: 100vw;
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(./img/logo6.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.home img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.home-header {
+  clip-path: polygon(100% 0, 100% 91%, 77% 100%, 23% 100%, 0 91%, 0 0);
+  background-color: rgba(255, 251, 252, 0.8);
+  padding: 10px 50px 40px;
+  border-radius: 0.5rem;
+  margin: 0 10px;
+}
+.home-header h1 {
+  color: var(--mainBlue);
+  font-family: var(--mainFontFamily);
+  font-size: 4rem;
+}
+.home-header p {
+  margin: 10px auto 30px;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainLetterSpacing);
+}
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: var(--mainBlue);
+  border: 2px solid var(--mainBlue);
+  padding: 5px 20px;
+  transition: var(--mainTransition);
+  border-radius: 5px;
+}
+.btn:hover {
+  color: var(--mainWhite);
+  background-color: var(--mainBlue);
+}
+@media screen and (max-width: 756px) {
+  .navbar {
+    position: fixed;
   }
-  to {
-    transform: rotate(360deg);
+
+  .home {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    /* height: 100vh; */
   }
 }
