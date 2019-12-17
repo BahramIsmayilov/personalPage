@@ -1,7 +1,13 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const Contant = () => {
-  return <div>hello from Contant page</div>;
+  return (
+    <div>
+      <h1>hello from Contact page</h1>
+      <Footer />
+    </div>
+  );
 };
 
 export default Contant;
