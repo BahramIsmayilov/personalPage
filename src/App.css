@@ -7,6 +7,7 @@
   font-family: "Roboto", sans-serif;
 }
 :root {
+  --mainRed: #ff0000;
   --mainBlue: #3993dd;
   --mainWhite: #fffbfc;
   --mainGrey: #e7e4e5;
@@ -113,7 +114,7 @@
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.5)
     ),
-    url(./img/logo6.jpeg);
+    url(./img/home-background.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -145,10 +146,10 @@
 .btn {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--mainBlue);
   border: 2px solid var(--mainBlue);
-  padding: 5px 20px;
+  padding: 3px 15px;
   transition: var(--mainTransition);
   border-radius: 5px;
 }
@@ -159,7 +160,7 @@
 /* *********** Hero *********** */
 .hero {
   position: relative;
-  height: 60vh;
+  height: 70vh;
 }
 .hero img {
   position: fixed;
@@ -178,7 +179,8 @@
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.5)
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.1)
   );
   position: fixed;
   z-index: -1;
@@ -190,7 +192,7 @@
   transform: translate(-50%, -50%);
   background-color: rgba(255, 251, 252, 0.7);
   padding: 0.5rem 2rem 2rem;
-  width: 400px;
+  width: 455px;
   text-align: center;
   clip-path: polygon(100% 0, 100% 91%, 77% 100%, 23% 100%, 0 91%, 0 0);
   border-radius: 5px;
@@ -216,7 +218,7 @@
   font-family: var(--mainFontFamily);
   font-size: 3rem;
   color: var(--mainDarkGrey);
-  letter-spacing: var(--mainBigLetterSpacing);
+  letter-spacing: var(--mainLetterSpacing);
 }
 .title div {
   background-color: var(--mainBlue);
@@ -346,4 +348,45 @@
 }
 .footer-icon .github:hover {
   color: var(--mainBlue);
+}
+/* ************ contact ************** */
+.contact-email {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0 auto;
+  width: 370px;
+}
+.contact-email p,
+.contact-email label {
+  color: var(--mainRed);
+  text-transform: capitalize;
+  margin-bottom: 1.1rem;
+}
+.contact-email label {
+  color: var(--mainDarkGrey);
+}
+.contact-email input[type="text"],
+.contact-email input[type="email"],
+.contact-email textarea {
+  outline: none;
+  border: none;
+  border-bottom: solid 2px var(--mainDarkGrey);
+  color: var(--mainDarkGrey);
+  display: block;
+  width: 100%;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  padding: 10px 10px;
+  background-color: transparent;
+  margin-bottom: 1.5rem;
+}
+.contact-email textarea {
+  margin-top: 1.1rem;
+  border: solid 2px var(--mainDarkGrey);
+  text-transform: none;
+  font-size: 1rem;
+}
+.contact-email .btn {
+  display: block;
+  margin: 0 auto;
 }

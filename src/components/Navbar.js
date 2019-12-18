@@ -5,7 +5,6 @@ import { PersonalContext } from "../context/context";
 
 const Navbar = () => {
   const { handleBtn, btn } = React.useContext(PersonalContext);
-  console.log(btn);
 
   return (
     <nav className="navbar">

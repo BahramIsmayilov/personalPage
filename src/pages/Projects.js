@@ -1,7 +1,9 @@
 import React from "react";
 import { PersonalContext } from "../context/context";
 // import Project from "../components/Project";
+import Hero from "../components/Hero";
 import Footer from "../components/Footer";
+import img from "../img/projects.jpeg";
 
 const Projects = () => {
   const projects = React.useContext(PersonalContext);
@@ -9,7 +11,7 @@ const Projects = () => {
 
   return (
     <div>
-      <h1>Hello from projects page</h1>
+      <Hero img={img} title="my projects" description="recent projects" />
       {/* {projects.map(item => {
         return <Project key={item.id} {...item} />;
       })} */}

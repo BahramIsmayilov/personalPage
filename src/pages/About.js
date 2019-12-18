@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
-import img from "../img/about.jpeg";
+import img from "../img/about3.jfif";
 import AboutInfo from "../components/AboutInfo";
 import Footer from "../components/Footer";
 
