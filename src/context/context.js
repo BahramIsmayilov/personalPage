@@ -8,8 +8,6 @@ function PersonalProvider({ children }) {
   const [projects, setProjects] = React.useState([]);
   const [btn, setBtn] = React.useState(false);
   const [tempProjects, setTempProjects] = React.useState([]);
-  const [react, setReact] = React.useState([]);
-  const [javascript, setJavascript] = React.useState([]);
   useEffect(() => {
     client
       .getEntries({
@@ -47,23 +45,15 @@ function PersonalProvider({ children }) {
   const handleBtn = e => {
     setBtn(!e);
   };
+
   const handleChange = e => {
-    setTempProjects(projects);
     if (e === "all") {
       setTempProjects(projects);
-    } else if (e === "react") {
-      const tempReact = projects.filter(project => project.built === "react");
-      setTempProjects(tempReact);
-    } else if (e === "javascript") {
-      const tempJavascript = projects.filter(
-        project => project.built === "javascript"
-      );
-      setTempProjects(tempJavascript);
+    } else {
+      const tempProject = projects.filter(project => project.built === e);
+      setTempProjects(tempProject);
     }
-
-    return tempProjects;
   };
-  console.log(tempProjects);
 
   return (
     <PersonalContext.Provider
