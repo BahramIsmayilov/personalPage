@@ -156,6 +156,7 @@
   transition: var(--mainTransition);
   border-radius: 5px;
   outline: none;
+  cursor: pointer;
 }
 .btn:hover {
   color: var(--mainWhite);
@@ -415,6 +416,14 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin: 0 auto;
   gap: 30px;
+}
+.projects-type-buttons {
+  text-align: center;
+  margin: 0 auto 3rem;
+  width: 75vw;
+}
+.btn-inline {
+  margin: -1rem 0.5rem 1rem;
 }
 /* ************ single Project ************* */
 .singleProject {
