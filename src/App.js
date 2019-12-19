@@ -7,6 +7,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 import Navbar from "./components/Navbar";
+import SingleProjectInfo from "./components/SingleProjectInfo";
 
 function App() {
   return (
@@ -16,16 +17,20 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-
         <Route path="/about">
           <About />
         </Route>
         <Route path="/contact">
           <Contact />
         </Route>
-        <Route path="/projects">
+        <Route exact path="/projects">
           <Projects />
         </Route>
+        <Route
+          exact
+          path="/projects/:id"
+          children={<SingleProjectInfo />}
+        ></Route>
         <Route>
           <Error path="*" />
         </Route>

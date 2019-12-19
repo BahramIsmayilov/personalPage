@@ -5,13 +5,6 @@ import { client } from "./contentful";
 const PersonalContext = React.createContext();
 
 function PersonalProvider({ children }) {
-  // const projects = items.map(item => {
-  //   const { id } = item.sys;
-  //   const image = item.fields.image.fields.file.url;
-  //   const { urlGithub } = item.fields;
-  //   const { urlWebSite } = item.fields;
-  //   return { id, image, urlGithub, urlWebSite };
-  // });
   const [projects, setProjects] = React.useState([]);
   const [btn, setBtn] = React.useState(false);
 
@@ -24,13 +17,25 @@ function PersonalProvider({ children }) {
         setProjects(
           response.items.map(item => {
             const { id } = item.sys;
-            const image = item.fields.image.fields.file.url;
+            const { name } = item.fields;
+            const { built } = item.fields;
+            const { used } = item.fields;
+            const { description } = item.fields;
             const { urlGithub } = item.fields;
             const { urlWebSite } = item.fields;
-            return { id, image, urlGithub, urlWebSite };
+            const image = item.fields.image.fields.file.url;
+            return {
+              id,
+              name,
+              built,
+              used,
+              description,
+              urlGithub,
+              urlWebSite,
+              image
+            };
           })
         );
-        // return projects;
       })
       .catch(console.error);
   }, []);
@@ -38,14 +43,6 @@ function PersonalProvider({ children }) {
     setBtn(!e);
   };
 
-  // console.log(projects);
-  // projects.map(item => {
-  //   const { id } = item.sys;
-  //   const image = item.fields.image.fields.file.url;
-  //   const { urlGithub } = item.fields;
-  //   const { urlWebSite } = item.fields;
-  //   return { id, image, urlGithub, urlWebSite };
-  // });
   return (
     <PersonalContext.Provider value={{ projects, handleBtn, btn }}>
       {children}
