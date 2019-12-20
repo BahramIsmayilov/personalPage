@@ -15,16 +15,23 @@ const ProjectsBuiltType = () => {
       <button
         type="button"
         className="btn btn-inline"
-        onClick={() => handleChange("javascript")}
+        onClick={() => handleChange("react")}
       >
-        javascript
+        react
       </button>
       <button
         type="button"
         className="btn btn-inline"
-        onClick={() => handleChange("react")}
+        onClick={() => handleChange("jquery")}
       >
-        react
+        jquery
+      </button>
+      <button
+        type="button"
+        className="btn btn-inline"
+        onClick={() => handleChange("vanilla js")}
+      >
+        vanilla js
       </button>
     </div>
   );

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { FaSearch, FaGithub } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
 
-const SingleProject = ({ id, name, built, urlGithub, urlWebSite, image }) => {
+const SingleProject = item => {
+  const { id, name, built, urlGithub, urlWebSite, image } = item;
   return (
     <div className="singleProject">
       <div className="image-cover">
