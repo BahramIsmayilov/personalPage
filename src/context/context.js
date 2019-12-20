@@ -8,6 +8,7 @@ function PersonalProvider({ children }) {
   const [projects, setProjects] = React.useState([]);
   const [btn, setBtn] = React.useState(false);
   const [tempProjects, setTempProjects] = React.useState([]);
+
   useEffect(() => {
     client
       .getEntries({
@@ -18,6 +19,7 @@ function PersonalProvider({ children }) {
           response.items.map(item => {
             const { id } = item.sys;
             const { name } = item.fields;
+            const { order } = item.fields;
             const { built } = item.fields;
             const { used } = item.fields;
             const { description } = item.fields;
@@ -27,6 +29,7 @@ function PersonalProvider({ children }) {
             return {
               id,
               name,
+              order,
               built,
               used,
               description,
@@ -40,7 +43,11 @@ function PersonalProvider({ children }) {
       .catch(console.error);
   }, []);
   useEffect(() => {
-    setTempProjects(projects);
+    let orderSort = projects.slice(0);
+    orderSort.sort((a, b) => {
+      return a.order - b.order;
+    });
+    setTempProjects(orderSort);
   }, [projects]);
   const handleBtn = e => {
     setBtn(!e);
@@ -48,12 +55,24 @@ function PersonalProvider({ children }) {
 
   const handleChange = e => {
     if (e === "all") {
-      setTempProjects(projects);
+      let orderSort = projects.slice(0);
+      orderSort.sort((a, b) => {
+        return a.order - b.order;
+      });
+      setTempProjects(orderSort);
     } else {
       const tempProject = projects.filter(project => project.built === e);
-      setTempProjects(tempProject);
+      let orderSort = tempProject.slice(0);
+      orderSort.sort((a, b) => {
+        return a.order - b.order;
+      });
+      setTempProjects(orderSort);
     }
   };
+  let orderSort = projects.slice(0);
+  orderSort.sort((a, b) => {
+    return a.order - b.order;
+  });
 
   return (
     <PersonalContext.Provider
