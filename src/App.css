@@ -279,8 +279,8 @@
 .my-stack {
   padding: 0 3rem;
   display: grid;
+  justify-content: center;
   text-align: center;
-  justify-content: space-between;
   grid-template-columns: repeat(auto-fill, 140px);
 }
 @media screen and (min-width: 992px) {
@@ -363,6 +363,7 @@
 .footer-icon .github:hover {
   color: var(--mainBlue);
 }
+
 /* ************ contact ************** */
 .contact-email {
   display: grid;
@@ -512,6 +513,9 @@
 }
 .singleProject-icon-web {
   color: var(--mainBlue);
+}
+.singleProject-icon-git {
+  color: var(--mainBlack);
 }
 .footer-cover .icon:hover,
 .singleProjectInfo .icon:hover {
