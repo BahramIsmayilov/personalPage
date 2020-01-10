@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 :root {
   --mainRed: #ff0000;
@@ -14,7 +14,7 @@
   --mainGrey: #e7e4e5;
   --mainBlack: #323232;
   --mainDarkGrey: #8f8c8c;
-  --mainFontFamily: "Permanent Marker", cursive;
+  --mainFontFamily: 'Permanent Marker', cursive;
   --mainTransition: all 0.4s linear;
   --longTransition: all 2s linear;
   --mainSmallLetterSpacing: 4px;
@@ -385,7 +385,17 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0.5rem;
+}
+.copy-right {
+  color: var(--mainDarkGrey);
+  margin: 1.5rem auto 2rem;
+  letter-spacing: var(--mainSmallLetterSpacing);
+  align-items: center;
+  display: flex;
+}
+.copy-right-icon {
+  margin-right: 1rem;
 }
 .footer h1 {
   text-transform: capitalize;
@@ -400,7 +410,7 @@
 .footer-icon {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [4];
+  -ms-grid-columns: (4, 1fr);
   grid-template-columns: repeat(4, 1fr);
 }
 .footer-icon .icon {
@@ -451,8 +461,8 @@
 .contact-email label {
   color: var(--mainDarkGrey);
 }
-.contact-email input[type="text"],
-.contact-email input[type="email"],
+.contact-email input[type='text'],
+.contact-email input[type='email'],
 .contact-email textarea {
   outline: none;
   border: none;

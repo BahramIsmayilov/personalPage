@@ -1,10 +1,10 @@
-import React from "react";
-import { FaFacebook, FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
-
+import React from 'react';
+import { FaFacebook, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
+import { MdCopyright } from 'react-icons/md';
 const Footer = () => {
   return (
     <footer className="footer">
-      <h1>bahram ismayilov</h1>
+      {/* <h1>bahram ismayilov</h1> */}
       <div className="footer-icon">
         <a
           href="https://www.youtube.com/BahramIsmayilov"
@@ -35,6 +35,9 @@ const Footer = () => {
           <FaGithub className="icon github" />
         </a>
       </div>
+      <p className="copy-right">
+        <MdCopyright className="copy-right-icon" /> Bahram ismayilov 2019
+      </p>
     </footer>
   );
 };

@@ -26,11 +26,9 @@ function App() {
         <Route exact path="/projects">
           <Projects />
         </Route>
-        <Route
-          exact
-          path="/projects/:id"
-          children={<SingleProjectInfo />}
-        ></Route>
+        <Route exact path="/projects/:id">
+          <SingleProjectInfo />
+        </Route>
         <Route>
           <Error path="*" />
         </Route>
