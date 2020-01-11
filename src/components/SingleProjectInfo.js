@@ -1,9 +1,9 @@
-import React from "react";
-import { PersonalContext } from "../context/context";
-import { useParams, Link } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
-import { FiMonitor } from "react-icons/fi";
-import Footer from "./Footer";
+import React from 'react';
+import { PersonalContext } from '../context/context';
+import { useParams, Link } from 'react-router-dom';
+import { FaGithub } from 'react-icons/fa';
+import { FiMonitor } from 'react-icons/fi';
+import Footer from './Footer';
 
 const SingleProjectInfo = () => {
   const { projects } = React.useContext(PersonalContext);
@@ -20,7 +20,7 @@ const SingleProjectInfo = () => {
   } = project;
   return (
     <section className="section">
-      <div className="singleProjectInfo">
+      <div className="singleProjectInfoBody">
         <div className="container">
           <div className="img-container">
             <img src={image} alt={name} />
