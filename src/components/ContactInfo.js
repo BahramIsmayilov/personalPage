@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Title from "../components/Title";
+import React, { useState } from 'react';
+import Title from '../components/Title';
 
 const ContactInfo = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [textarea, setTextarea] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [textarea, setTextarea] = useState('');
 
   return (
     <article className="article">
@@ -39,12 +39,10 @@ const ContactInfo = () => {
             onChange={e => setTextarea(e.target.value)}
           ></textarea>
           {name.length && email.length && textarea.length ? (
-            <input type="submit" value="submit here" className="btn"></input>
-          ) : (
-            <button className="btn" disabled>
-              please fill out all fields
+            <button type="submit" value="submit here" className="btn">
+              submit here
             </button>
-          )}
+          ) : null}
         </form>
       </div>
     </article>

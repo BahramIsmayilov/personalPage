@@ -1,5 +1,5 @@
-import React from "react";
-import { PersonalContext } from "../context/context";
+import React from 'react';
+import { PersonalContext } from '../context/context';
 
 const ProjectsBuiltType = () => {
   const { handleChange } = React.useContext(PersonalContext);
@@ -7,29 +7,29 @@ const ProjectsBuiltType = () => {
     <div className="projects-type-buttons">
       <button
         type="button"
-        className="btn btn-inline"
-        onClick={() => handleChange("all")}
+        className="btn "
+        onClick={() => handleChange('all')}
       >
         all
       </button>
       <button
         type="button"
-        className="btn btn-inline"
-        onClick={() => handleChange("react")}
+        className="btn"
+        onClick={() => handleChange('react')}
       >
         react
       </button>
       <button
         type="button"
-        className="btn btn-inline"
-        onClick={() => handleChange("jquery")}
+        className="btn "
+        onClick={() => handleChange('jquery')}
       >
         jquery
       </button>
       <button
         type="button"
-        className="btn btn-inline"
-        onClick={() => handleChange("vanilla js")}
+        className="btn "
+        onClick={() => handleChange('vanilla js')}
       >
         vanilla js
       </button>

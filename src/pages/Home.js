@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <div className="home-header">
         <h1>bahram ismayilov</h1>
         <p>front end developer</p>
-        <Link className="btn" to="/projects">
+        <Link className="btn btn-link" to="/projects">
           my projects
         </Link>
       </div>

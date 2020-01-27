@@ -126,14 +126,6 @@
   display: -ms-flexbox;
   display: flex;
   height: calc(100vh - 66.4px);
-  background-image: -webkit-gradient(
-      linear,
-      right top,
-      left top,
-      from(rgba(0, 0, 0, 0.3)),
-      to(rgba(0, 0, 0, 0.5))
-    ),
-    url(./img/home-background.jpeg);
   background-image: -o-linear-gradient(
       right,
       rgba(0, 0, 0, 0.3),
@@ -180,7 +172,8 @@
   letter-spacing: var(--mainLetterSpacing);
   color: var(--mainDarkGrey);
 }
-.btn {
+
+/* .btn {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -197,6 +190,49 @@
 .btn:hover {
   color: var(--mainWhite);
   background-color: var(--mainBlue);
+} */
+
+.btn {
+  width: 180px;
+  padding: 1rem 0.5rem;
+  /* height: 60px; */
+  margin: 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: var(--mainBlue);
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border: 3px solid var(--mainBlue);
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn::before,
+.btn::after {
+  content: '';
+  height: 4px;
+  width: 30px;
+  background-color: var(--mainWhite);
+  position: absolute;
+  transition: 0.4s linear;
+  transform: skew(40deg);
+}
+.btn::before {
+  top: -3px;
+  left: 10%;
+}
+.btn::after {
+  bottom: -3px;
+  right: 10%;
+}
+.btn:hover::before {
+  left: 70%;
+}
+.btn:hover::after {
+  right: 70%;
 }
 /* *********** Hero *********** */
 .hero {
@@ -218,14 +254,7 @@
   height: 100vh;
   width: 100%;
   left: 0;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(0, 0, 0, 0.1)),
-    color-stop(rgba(0, 0, 0, 0.5)),
-    to(rgba(0, 0, 0, 0.1))
-  );
+
   background-image: -o-linear-gradient(
     left,
     rgba(0, 0, 0, 0.1),
@@ -342,7 +371,6 @@
 }
 @media screen and (min-width: 992px) {
   .my-stack {
-    -ms-grid-columns: (1fr) [5];
     grid-template-columns: repeat(5, 1fr);
   }
 }
@@ -447,7 +475,6 @@
 .contact-email {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [1];
   grid-template-columns: repeat(1, 1fr);
   margin: 0 auto;
   width: 100%;
