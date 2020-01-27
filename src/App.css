@@ -166,7 +166,7 @@
   font-size: 4rem;
 }
 .home-header p {
-  margin: 10px auto 30px;
+  margin: 10px auto 50px;
   font-size: 1.4rem;
   text-transform: capitalize;
   letter-spacing: var(--mainLetterSpacing);
